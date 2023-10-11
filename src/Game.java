@@ -14,7 +14,8 @@ public class Game {
     public static final String BG_YELLOW = "\u001b[43m";
 
     public Game() {
-        word = "SNAIL";
+        Wordlist randomWord = new Wordlist();
+        word = randomWord.getRandomWord().toUpperCase();
         guesses = new ArrayList<String>();
         attempts = 0; 
         gameOver = false;
@@ -84,7 +85,6 @@ public class Game {
     }
 
     public void printBoard() {
-        System.out.println("");
         for (String guess : guesses) {
             System.out.println(guess);
         }
